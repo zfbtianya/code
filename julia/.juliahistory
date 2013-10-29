@@ -1,0 +1,103 @@
+WORD_SIZE
+Int
+0x1
+typeof(ans)
+0x12
+typeof(ans)
+0x123
+typeof(ans)
+25e-3
+e->25e-3
+f = e->25e-3
+f(1)
+f = e->25*e - 3
+f(1)
+f = e->25e - 3
+f(1)
+typeof(16e-4)
+typeof(float32(16e-4))
+1/0
+0/1
+0/0
+-1/0
+Inf -Nan
+Inf -NaN
+nan
+nan(1)
+nan(1.0)
+inf(1.1)
+-inf(1.1)
+- inf(1.1)
+f = (f1,x)->f1(x,NaN)
+f(+,2)
+f(*,2)
+f(/,2)
+f(*,NaN)
+f(*,Inf)
+typemin(float)
+typemin(float32)
+typemin
+typemin(Int)
+typemin(Float)
+typemin(Float32)
+NaN32-NaN64
+NaN32-NaN
+eps(Float32)
+eps(Float64)
+eps(Float32)
+1f-1
+1-1
+1b-1
+2f-3
+eps()
+eps(1)
+eps(2)
+eps(2.0)
+eps(0.0)
+eps(Float64)
+h = eps(Float64)
+1.0 + h
+1.0 + h -1.0
+BigInt(typemax(Int64))+1
+BigInt("1111111111111111111111111111111111111111111") +1
+factorial(BigInt(40))
+factorial(40)
+factorial(BigInt(400))
+(1+3)2
+2(1+3)
+0xff
+1e-10
+1e-1
+-2<<1
+-2>>1
+1>>>2
+1<<<2
+2<<1
+-2<<1
+-3<<1
+roun(5.3,2)
+round(5.3)
+round(5.3,3)
+round(5.33333,3)
+f(x) = x^2
+f(x) -> x^2
+f
+f1(x) = x
+f2(x) = x^2
+f3(x) = x^3
+f3(x,y) = x^3 + y^3
+f4(x=3,y)=x+y
+f4(x=3,y) = x+y
+f4(x,y=3) = x+y
+f5(y=2,x=2)
+f4(y=2,x=2)
+Pkg.add("Cairo")
+using Cairo
+using Winston
+plot(cumsum(randn(1000)))
+Pkg.add("PyPlot")
+using PyPlot
+x = linspace(0,2*pi,1000);y=sin(3x+4*cos(2*x))
+plot(x,ycolor="red",linewidth=2.0,linestyle="--")
+plot(x,y,color="red",linewidth=2.0,linestyle="--")
+plot(x,y,color="read",linewidth=2.0,linestyle="--")

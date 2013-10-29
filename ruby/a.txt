@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+
+   <match target="pattern">
+      <test qual="any" name="family">
+         <string>serif</string>
+      </test>
+      <edit name="family" mode="prepend" binding="strong">
+         <string>DejaVu Serif</string>
+         <string>Bitstream Vera Serif</string>
+         <string>HYSong</string>
+         <string>AR PL UMing CN</string>
+         <string>AR PL UMing HK</string>
+         <string>AR PL ShanHeiSun Uni</string>
+         <string>AR PL New Sung</string>
+         <string>WenQuanYi Bitmap Song</string>
+         <string>AR PL UKai CN</string>
+         <string>AR PL ZenKai Uni</string>
+      </edit>
+   </match>
+   <match target="pattern">
+      <test qual="any" name="family">
+         <string>sans-serif</string>
+      </test>
+      <edit name="family" mode="prepend" binding="strong">
+         <string>DejaVu Sans</string>
+         <string>Bitstream Vera Sans</string>
+         <string>WenQuanYi Micro Hei</string>
+         <string>WenQuanYi Zen Hei</string>
+         <string>Droid Sans Fallback</string>
+         <string>HYSong</string>
+         <string>AR PL UMing CN</string>
+         <string>AR PL UMing HK</string>
+         <string>AR PL ShanHeiSun Uni</string>
+         <string>AR PL New Sung</string>
+         <string>AR PL UKai CN</string>
+         <string>AR PL ZenKai Uni</string>
+      </edit>
+   </match>
+   <match target="pattern">
+      <test qual="any" name="family">
+         <string>monospace</string>
+      </test>
+      <edit name="family" mode="prepend" binding="strong">
+         <string>DejaVu Sans Mono</string>
+         <string>Bitstream Vera Sans Mono</string>
+         <string>WenQuanYi Micro Hei Mono</string>
+         <string>WenQuanYi Zen Hei Mono</string>
+         <string>Droid Sans Fallback</string>
+         <string>HYSong</string>
+         <string>AR PL UMing CN</string>
+         <string>AR PL UMing HK</string>
+         <string>AR PL ShanHeiSun Uni</string>
+         <string>AR PL New Sung</string>
+         <string>AR PL UKai CN</string>
+         <string>AR PL ZenKai Uni</string>
+      </edit>
+   </match>
+
+   <!-- Default -->
+   <match target="font">   
+      <edit name="autohint" mode="assign">
+         <bool>false</bool>
+      </edit>
+      <edit name="antialias" mode="assign">
+         <bool>true</bool>
+      </edit>
+      <edit name="hinting" mode="assign">
+         <bool>true</bool>
+      </edit>
+      <edit name="hintstyle" mode="assign">
+         <const>hintslight</const>
+      </edit>
+      <edit name="lcdfilter" mode="assign">
+         <const>lcddefault</const>
+      </edit>
+      <edit name="rgba" mode="assign">
+         <const>rgb</const>
+      </edit>
+   </match>
+
+   <!-- CJK -->
+   <match target="font">
+      <test name="lang" compare="contains">
+         <string>ja</string>
+         <string>zh</string>
+         <string>ko</string>
+      </test>
+      <test name="spacing" compare="eq">
+         <const>dual</const>
+      </test>
+      <edit name="spacing">
+         <const>proportional</const>
+      </edit>
+      <edit name="globaladvance" binding="strong">
+         <bool>false</bool>
+      </edit>
+   </match>
+
+   <!-- Synthetic emboldening for Chinese fonts that do not have bold face available -->
+   <match target="font" >
+      <test name="family" compare="contains" >
+         <string>Song</string>
+         <string>Sun</string>
+         <string>Kai</string>
+         <string>Ming</string>
+      </test>
+      <!-- check to see if the font is just regular -->
+      <test name="weight" compare="less_eq">
+         <int>100</int>
+      </test>
+      <test compare="more_eq" target="pattern" name="weight" >
+         <int>180</int>
+      </test>
+      <edit mode="assign" name="embolden" >
+         <bool>true</bool>
+      </edit>
+   </match>
+
+   <!-- WenQuanYi Micro Hei -->
+   <match target="font">
+      <test qual="any" name="family">
+         <string>WenQuanYi Micro Hei</string>
+         <string>文泉驿微米黑</string>
+         <string>文泉驛微米黑</string>
+      </test>
+      <edit name="globaladvance">
+         <bool>false</bool>
+      </edit>
+      <edit name="spacing">
+         <int>0</int>
+      </edit>
+      <edit name="antialias" mode="assign">
+         <bool>true</bool>
+      </edit>
+      <edit name="rh_prefer_bitmaps" mode="assign">
+         <bool>false</bool>
+      </edit>
+      <edit name="embeddedbitmap">
+         <bool>false</bool>
+      </edit>
+      <edit name="autohint" mode="assign">
+         <bool>false</bool>
+      </edit>
+      <edit name="hinting" mode="assign">
+         <bool>true</bool>
+      </edit>
+      <edit name="hintstyle" mode="assign">
+         <const>hintslight</const>
+      </edit>
+      <edit name="lcdfilter" mode="assign">
+         <const>lcddefault</const>
+      </edit>
+      <edit name="rgba" mode="assign">
+         <const>rgb</const>
+      </edit>
+   </match>
+
+   <!-- Microsoft YaHei -->
+   <match target="font" >
+      <test compare="eq" name="family" qual="any" >
+         <string>Microsoft YaHei</string>
+         <string>微软雅黑</string>
+      </test>
+      <edit name="antialias" mode="assign">
+         <bool>true</bool>
+      </edit>
+      <edit name="rh_prefer_bitmaps" mode="assign">
+         <bool>false</bool>
+      </edit>
+      <edit name="embeddedbitmap">
+         <bool>false</bool>
+      </edit>
+      <edit name="autohint" mode="assign">
+         <bool>false</bool>
+      </edit>
+      <edit name="hinting" mode="assign">
+         <bool>true</bool>
+      </edit>
+      <edit name="hintstyle" mode="assign">
+         <const>hintslight</const>
+      </edit>
+      <edit name="lcdfilter" mode="assign">
+         <const>lcddefault</const>
+      </edit>
+      <edit name="rgba" mode="assign">
+         <const>rgb</const>
+      </edit>
+   </match>
+
+   <!-- SimSun -->
+   <match target="font" >
+      <test compare="eq" name="family" qual="any" >
+         <string>宋体</string>
+         <string>新宋体</string>
+         <string>SimSun</string>
+         <string>NSimSun</string>
+         <string>宋体-18030</string>
+         <string>新宋体-18030</string>
+         <string>SimSun-18030</string>
+         <string>NSimSun-18030</string>
+      </test>
+      <test name="pixelsize" compare="more_eq">
+         <double>12</double>
+      </test>
+      <test name="pixelsize" compare="less_eq">
+         <double>17</double>
+      </test>
+      <test name="weight" compare="less_eq" target="pattern">
+         <const>medium</const>
+      </test>
+      <edit name="antialias" mode="assign">
+         <bool>false</bool>
+      </edit>
+      <edit name="rh_prefer_bitmaps" mode="assign">
+         <bool>true</bool>
+      </edit>
+      <edit name="embeddedbitmap">
+         <bool>true</bool>
+      </edit>
+      <edit name="autohint" mode="assign">
+         <bool>false</bool>
+      </edit>
+      <edit name="hinting" mode="assign">
+         <bool>true</bool>
+      </edit>
+      <edit name="hintstyle" mode="assign">
+         <const>hintmedium</const>
+      </edit>
+      <edit name="lcdfilter" mode="assign">
+         <const>lcddefault</const>
+      </edit>
+      <edit name="rgba" mode="assign">
+         <const>rgb</const>
+      </edit>
+   </match>
+
+   <!-- SimSun Bold -->
+   <match target="font" >
+      <test compare="eq" name="family" qual="any" >
+         <string>宋体</string>
+         <string>新宋体</string>
+         <string>SimSun</string>
+         <string>NSimSun</string>
+         <string>宋体-18030</string>
+         <string>新宋体-18030</string>
+         <string>SimSun-18030</string>
+         <string>NSimSun-18030</string>
+      </test>
+      <test name="pixelsize" compare="more_eq">
+         <double>12</double>
+      </test>
+      <test name="pixelsize" compare="less_eq">
+         <double>17</double>
+      </test>
+      <test name="weight" compare="more" target="pattern">
+         <const>medium</const>
+      </test>
+      <edit name="antialias" mode="assign">
+         <bool>true</bool>
+      </edit>
+      <edit name="rh_prefer_bitmaps" mode="assign">
+         <bool>true</bool>
+      </edit>
+      <edit name="embeddedbitmap">
+         <bool>true</bool>
+      </edit>
+      <edit name="autohint" mode="assign">
+         <bool>false</bool>
+      </edit>
+      <edit name="hinting" mode="assign">
+         <bool>true</bool>
+      </edit>
+      <edit name="hintstyle" mode="assign">
+         <const>hintmedium</const>
+      </edit>
+      <edit name="lcdfilter" mode="assign">
+         <const>lcddefault</const>
+      </edit>
+      <edit name="rgba" mode="assign">
+         <const>rgb</const>
+      </edit>
+   </match>
+
+

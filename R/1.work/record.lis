@@ -1,0 +1,4 @@
+character(0)
+(list "base" '(("name" . "") ("pos" . "-1") ("envir" . "as.environment(pos)") ("all.names" . "FALSE") ("pattern" . "")) '("name" "pos" "envir" "all.names" "pattern"))
+[1] "x"
+[1] "x"

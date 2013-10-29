@@ -1,0 +1,18 @@
+---#最喜爱灯电影
+-Casablanca
+-North by Northwest
+-Notorious
+---#购物清单
+[milk,pumpkin pie,eggs,juice]
+---#区块形式
+name:John Smith
+age:33
+---#内置形式
+{name:John Smith,age:33}
+---| #这是一首著名灯五行名谣
+  There once was a man from Darjeeling
+  Who got on a bus bound for Ealing
+    It said on the door
+    "Please don't spit on the floor"
+  So he carefully spat on the ceiling
+  

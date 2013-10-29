@@ -1,0 +1,1 @@
+doubleMe :: Num
